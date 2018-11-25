@@ -1,0 +1,429 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+.editor {
+    &__controls {
+        width: 200px;
+        margin-left: 640px;
+    }
+
+    &__interface {
+        position: absolute;
+        background-color: var(--color-bg-default);
+        transform: scale(0.5) translate(-50%, -50%);
+    }
+
+    &__interface-search {
+        width: 360px;
+        height: 36px;
+        border-radius: 6px;
+        background: var(--color-bg-ghost);
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding: var(--space-xxs) var(--space-xs);
+
+        & > *:not(:last-child) {
+            margin-right: var(--space-s);
+        }
+        & > input {
+            flex-basis: 100%;
+            border: 0;
+            background: transparent;
+            font-size: var(--size-typo-m);
+            line-height: var(--line-height-typo-m);
+            color: var(--color-typo-primary);
+
+            &:focus {
+                outline: none;
+            }
+        }
+        & > .icon {
+            flex-shrink: 0;
+        }
+    }
+
+    &__left-section {
+        background-color: var(--color-bg-soft);
+    }
+
+    &__right-section {
+        background-image: url(https://cools-rqinxsvuofk2.netdna-ssl.com/wp-content/uploads/2018/01/fka-twigs-baby-hairs.jpg);
+        background-repeat: no-repeat;
+        background-size: 95%;
+        background-position: 640% -10%;
+    }
+
+    &__interface-button {
+        border-radius: 99em;
+        background: var(--color-bg-brand);
+        font-size: var(--size-typo-m);
+        font-weight: 500;
+        color: var(--color-typo-primary);
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+
+        &_type_play {
+            padding: 0 var(--space-xxl);
+
+            .icon {
+                background: white;
+                border-radius: 99em;
+                width: 40px;
+                height: 40px;
+                box-sizing: border-box;
+                transform: translateX(32px);
+                box-shadow: 0 0 0 6px var(--color-bg-ghost);
+            }
+            svg {
+                transform: translate(12px, 4px);
+            }
+        }
+        &_type_favourites {
+            border-radius: 99em;
+            width: 40px;
+            svg {
+                transform: translate(12px, 4px);
+            }
+        }
+    }
+
+    .pt-card {
+        border-radius: 8px;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: var(--color-bg-ghost);
+        }
+
+        &__image {
+            border-radius: 6px;
+        }
+    }
+
+    .pt-table {
+        &__row {
+            margin: 0;
+            padding-right: var(--space-m);
+            padding-left: var(--space-m);
+            align-items: center !important;
+            border-radius: 8px;
+
+            &:hover {
+                background: var(--color-bg-ghost);
+            }
+        }
+        &_space-v_xxs .pt-table__col {
+            padding-top: var(--space-xxs);
+            padding-bottom: var(--space-xxs);
+        }
+    }
+
+    .image {
+        display: block;
+        border-radius: 10%;
+    }
+
+    .colorpicker {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 20px;
+        outline: none;
+    }
+
+    .selectable {
+        position: relative;
+        box-sizing: border-box;
+        /*transition: outline 0.3s ease;*/
+        /*outline: 0px solid yellow;*/
+        &:hover {
+        }
+    }
+    .tooltip {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        margin: 0 -1px;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 15px;
+        color: black;
+        background: yellow;
+        border-radius: 0 0 4px 4px;
+        z-index: 9;
+    }
+}
+
+
+.tpl-layout_structure_10-90 {
+    grid-template-columns: 10% 90%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_20-80 {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_30-70 {
+    grid-template-columns: 30% 70%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_40-60 {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_50-50 {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_60-40 {
+    grid-template-columns: 60% 40%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_70-30 {
+    grid-template-columns: 70% 30%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_80-20 {
+    grid-template-columns: 80% 20%;
+    grid-template-rows: minmax(100vh,auto);
+}
+.tpl-layout_structure_90-10 {
+    grid-template-columns: 90% 10%;
+    grid-template-rows: minmax(100vh,auto);
+}
+
+.text_size_xxxxxl {
+    font-size: var(--size-typo-xxxxxl);
+    line-height: var(--line-height-typo-xxxxxl);
+}
+
+@media screen and (min-width: 1024px) {
+    .tpl-grid_m-ratio_1-1-1-1-1-1 {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+
+
+/* Базовые цвета от которых выстраивается вся политра */
+$color-base-base: #ffffff;
+$color-base-essential: #13141d;
+$color-base-project: #2dc6e7;
+$color-base-phantom: #ffffff;
+$color-base-path: #08b7da;
+$color-base-success: #00985f;
+$color-base-alert: #f33;
+$color-base-warning: #f90;
+$color-base-normal: #dde3e5;
+$color-base-system: #778a9b;
+
+/* Цвета фона */
+$color-bg-brand: $color-base-project;
+$color-bg-action: color($color-base-project l(+15%));
+$color-bg-selection: color($color-base-project h(-1) l(+31%));
+$color-bg-hover: color($color-base-base a(15%));
+$color-bg-border: color($color-base-phantom a(5%));
+$color-bg-stripe: color($color-base-phantom a(4%));
+$color-bg-ghost: color($color-base-phantom a(8%));
+$color-bg-default: $color-base-essential;
+$color-bg-tone: color($color-base-phantom a(90%));
+$color-bg-soft: color($color-base-essential h(+25) s(+2) l(+5%));
+
+$color-bg-success: $color-base-success;
+$color-bg-alert: $color-base-alert;
+$color-bg-warning: $color-base-warning;
+$color-bg-normal: $color-base-normal;
+$color-bg-system: $color-base-system;
+$color-bg-link: color($color-base-path h(-7%) s(-13) l(+14) a(40%));
+
+/* Цвета текста */
+$color-typo-brand: $color-base-project;
+$color-typo-primary: $color-base-base;
+$color-typo-promo: color($color-base-base a(80%));
+$color-typo-secondary: color($color-base-base a(60%));
+$color-typo-ghost: color($color-base-base a(30%));
+$color-typo-disable: color($color-base-base a(30%));
+$color-typo-success: $color-base-success;
+$color-typo-warning: $color-base-warning;
+$color-typo-alert: $color-base-alert;
+
+/* Цвета ссылок */
+$color-link: $color-base-path;
+$color-link-external: $color-base-path;
+$color-link-minor: color($color-base-path h(+22) s(-80%) l(+13%));
+$color-link-hover: color($color-base-path l(-7%));
+
+.theme_color_editor-default {
+    /* Цвета блоков */
+    --color-bg-brand: $color-bg-brand;
+    --color-bg-action: $color-bg-action;
+    --color-bg-selection: $color-bg-selection;
+    --color-bg-hover: $color-bg-hover;
+    --color-bg-border: $color-bg-border;
+    --color-bg-stripe: $color-bg-stripe;
+    --color-bg-ghost: $color-bg-ghost;
+    --color-bg-default: $color-bg-default;
+    --color-bg-tone: $color-bg-tone;
+    --color-bg-soft: $color-bg-soft;
+    --color-bg-success: $color-bg-success;
+    --color-bg-alert: $color-bg-alert;
+    --color-bg-warning: $color-bg-warning;
+    --color-bg-normal: $color-bg-normal;
+    --color-bg-system: $color-bg-system;
+    --color-bg-link: $color-bg-link;
+
+    /* Цвета текста */
+    --color-typo-brand: $color-typo-brand;
+    --color-typo-primary: $color-typo-primary;
+    --color-typo-promo: $color-typo-promo;
+    --color-typo-secondary: $color-typo-secondary;
+    --color-typo-ghost: $color-typo-ghost;
+    --color-typo-disable: $color-typo-disable;
+    --color-typo-success: $color-typo-success;
+    --color-typo-warning: $color-typo-warning;
+    --color-typo-alert: $color-typo-alert;
+
+    /* Цвета ссылок */
+    --color-link: $color-link;
+    --color-link-external: $color-link-external;
+    --color-link-minor: $color-link-minor;
+    --color-link-hover: $color-link-hover;
+}
+
+.theme_gap_editor-default {
+    /* Размеры отступа у контента */
+    --gap: var(--space-xxxl);
+
+    /* Размеры отступов в колонках */
+    --col-gap-third: calc(var(--gap) / 3);
+    --col-gap-half: calc(var(--gap) / 2);
+    --col-gap-two-thirds: calc(var(--gap) * 2 / 3);
+    --col-gap-full: var(--gap);
+}
+
+.theme_size_editor-default {
+    /* Размер текста */
+    --size-typo-xs: 11px;
+    --size-typo-s: 13px;
+    --size-typo-m: 15px;
+    --size-typo-l: 18px;
+    --size-typo-xl: 20px;
+    --size-typo-xxl: 24px;
+    --size-typo-xxxl: 32px;
+    --size-typo-xxxxl: 48px;
+    --size-typo-xxxxxl: 62px;
+    --size-typo-xxxxxxl: 96px;
+
+    /* Межстрочный интервал */
+    --line-height-typo-xs: 15px;
+    --line-height-typo-s: 18px;
+    --line-height-typo-m: 21px;
+    --line-height-typo-l: 25px;
+    --line-height-typo-xl: 28px;
+    --line-height-typo-xxl: 34px;
+    --line-height-typo-xxxl: 42px;
+    --line-height-typo-xxxxl: 62px;
+    --line-height-typo-xxxxxl: 60px;
+    --line-height-typo-xxxxxxl: 115px;
+}
+
+.theme_size_editor-prime {
+    /* Размер текста */
+    --size-typo-xs: 11px;
+    --size-typo-s: 13px;
+    --size-typo-m: 17px;
+    --size-typo-l: 19px;
+    --size-typo-xl: 23px;
+    --size-typo-xxl: 29px;
+    --size-typo-xxxl: 31px;
+    --size-typo-xxxxl: 47px;
+    --size-typo-xxxxxl: 61px;
+    --size-typo-xxxxxxl: 97px;
+
+    /* Межстрочный интервал */
+    --line-height-typo-xs: 120%;
+    --line-height-typo-s: 120%;
+    --line-height-typo-m: 120%;
+    --line-height-typo-l: 120%;
+    --line-height-typo-xl: 120%;
+    --line-height-typo-xxl: 120%;
+    --line-height-typo-xxxl: 120%;
+    --line-height-typo-xxxxl: 120%;
+    --line-height-typo-xxxxxl: 120%;
+    --line-height-typo-xxxxxxl: 120%;
+}
+
+.theme_size_editor-golden {
+    /* Размер текста */
+    --size-typo-xs: calc(var(--size-typo-s) / 1.618);
+    --size-typo-s: calc(var(--size-typo-m) / 1.618);
+    --size-typo-m: 17px;
+    --size-typo-l: calc(var(--size-typo-m) * 1.618);
+    --size-typo-xl: calc(var(--size-typo-l) * 1.618);
+    --size-typo-xxl: calc(var(--size-typo-xl) * 1.618);
+    --size-typo-xxxl: calc(var(--size-typo-xxl) * 1.618);
+    --size-typo-xxxxl: calc(var(--size-typo-xxxl) * 1.618);
+    --size-typo-xxxxxl: calc(var(--size-typo-xxxxl) * 1.618);
+    --size-typo-xxxxxxl: calc(var(--size-typo-xxxxxl) * 1.618);
+
+    /* Межстрочный интервал */
+    --line-height-typo-xs: 120%;
+    --line-height-typo-s: 120%;
+    --line-height-typo-m: 120%;
+    --line-height-typo-l: 120%;
+    --line-height-typo-xl: 120%;
+    --line-height-typo-xxl: 120%;
+    --line-height-typo-xxxl: 120%;
+    --line-height-typo-xxxxl: 120%;
+    --line-height-typo-xxxxxl: 120%;
+    --line-height-typo-xxxxxxl: 120%;
+}
+
+.theme_size_editor-fibonacci {
+    /* Размер текста */
+    --size-typo-xs: 8px;
+    --size-typo-s: 13px;
+    --size-typo-m: 21px;
+    --size-typo-l: 34px;
+    --size-typo-xl: 55px;
+    --size-typo-xxl: 89px;
+    --size-typo-xxxl: 144px;
+    --size-typo-xxxxl: 233px;
+    --size-typo-xxxxxl: 377px;
+    --size-typo-xxxxxxl: 610px;
+
+    /* Межстрочный интервал */
+    --line-height-typo-xs: 120%;
+    --line-height-typo-s: 120%;
+    --line-height-typo-m: 120%;
+    --line-height-typo-l: 120%;
+    --line-height-typo-xl: 120%;
+    --line-height-typo-xxl: 120%;
+    --line-height-typo-xxxl: 120%;
+    --line-height-typo-xxxxl: 120%;
+    --line-height-typo-xxxxxl: 120%;
+    --line-height-typo-xxxxxxl: 120%;
+}
+
+.theme_space_editor-default {
+    --space-module: 4px;
+    /* Отступы */
+    --space-xxxs: calc(var(--space-module) / 2);
+    --space-xxs: var(--space-module);
+    --space-xs: calc(var(--space-module) * 2);
+    --space-s: calc(var(--space-module) * 3);
+    --space-m: calc(var(--space-module) * 4);
+    --space-l: calc(var(--space-module) * 5);
+    --space-xl: calc(var(--space-module) * 6);
+    --space-xxl: calc(var(--space-module) * 8);
+    --space-xxxl: calc(var(--space-module) * 10);
+    --space-xxxxl: calc(var(--space-module) * 12);
+    --space-xxxxxl: calc(var(--space-module) * 18);
+    --space-xxxxxxl: calc(var(--space-module) * 24);
+}
