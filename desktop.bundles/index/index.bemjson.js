@@ -1049,7 +1049,7 @@ module.exports = {
 																{
 																	block: 'image',
 																	mix: { block: 'pt-card', elem: 'image', elemMods: { 'size': 'cover' }},
-																	url: '../../assets/i/train.png'
+																	url: '../../assets/i/kit-bill.png'
 																},
 																{
 																	elem: 'header',
@@ -1337,14 +1337,14 @@ module.exports = {
 														});
 												} catch(e) { }
 										});
-						
+
 										var n = d.getElementsByTagName("script")[0],
 												s = d.createElement("script"),
 												f = function () { n.parentNode.insertBefore(s, n); };
 										s.type = "text/javascript";
 										s.async = true;
 										s.src = "https://mc.yandex.ru/metrika/tag.js";
-						
+
 										if (w.opera == "[object Opera]") {
 												d.addEventListener("DOMContentLoaded", f, false);
 										} else { f(); }
