@@ -5,14 +5,17 @@ body, html {
 
 .editor {
     &__controls {
+        position: relative;
         width: 200px;
         margin-left: 640px;
+        z-index: -1;
     }
 
     &__interface {
         position: absolute;
         background-color: var(--color-bg-default);
         transform: scale(0.5) translate(-50%, -50%);
+        z-index: 1;
     }
 
     &__interface-search {
@@ -138,24 +141,59 @@ body, html {
     .selectable {
         position: relative;
         box-sizing: border-box;
-        /*transition: outline 0.3s ease;*/
-        /*outline: 0px solid yellow;*/
+
         &:hover {
+            box-shadow: inset 0 0 0 1px yellow;
+        }
+    }
+    .selected {
+        box-shadow: inset 0 0 0 1px yellow;
+
+        & > .tooltip {
+            display: block;
         }
     }
     .tooltip {
         position: absolute;
-        left: 0;
+        left: 1px;
         top: 100%;
+        display: none;
         margin: 0 -1px;
-        padding: 8px;
-        font-size: 12px;
+        padding: 16px;
+        font-size: 16px;
         font-weight: normal;
         line-height: 15px;
+        text-align: left !important;
+        text-decoration: none;
+        text-transform: none;
         color: black;
         background: yellow;
         border-radius: 0 0 4px 4px;
-        z-index: 9;
+        z-index: 99;
+
+        &__radiogroup {
+            display: inline-flex;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        &__radiogroup:not(:first-child) {
+            margin-left: 12px;
+        }
+        &__radio {
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &_active {
+                background: black;
+                color: yellow;
+            }
+        }
+        &__radio:not(:first-child) {
+            border-left: 1px solid black;
+        }
+        &__row:not(:last-child) {
+            margin-bottom: 12px;
+        }
     }
 }
 

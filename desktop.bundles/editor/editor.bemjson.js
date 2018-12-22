@@ -7,13 +7,18 @@ module.exports = {
         { elem: 'meta', attrs: { name: 'description', content: '' } },
         { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
         { elem: 'css', url: 'editor.min.css' },
+        { elem: 'css', url: 'https://whitepaper.tools/cdn/whitepaper-1.0.0.min.css' },
         { elem: 'js', url: 'https://code.jquery.com/jquery-3.2.1.js' },
     ],
     scripts: [{ elem: 'js', url: 'editor.min.js' }],
-    mix: {
+    mix: [{
         block: 'theme',
         mods: { color: 'whitepaper-default', space: 'default', breakpoint: 'default', size: 'default', gap: 'small', menu: 'default', font: 'museo' }
     },
+    {
+        block: 'control',
+        mods: { whitepaper: 'default' }
+    }],
     content: [
     {
         block: 'editor',
